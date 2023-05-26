@@ -4,10 +4,13 @@ import CurrentWeather from "./components/current-weather/current-weather";
 import Forecast from "./components/forecast/forecast";
 import { WEATHER_API_URL, WEATHER_API_KEY } from "./api";
 import "./App.css";
+import Button from "./saveToLS.js"
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
+  //new
+  const [searchValue, setSearchValue] = useState("");
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(" ");
@@ -26,15 +29,20 @@ function App() {
 
         setCurrentWeather({ city: searchData.label, ...weatherResponse });
         setForecast({ city: searchData.label, ...forcastResponse });
+        //Sets search value
+        setSearchValue(searchData.label); 
       })
       .catch(console.log);
   };
 
   return (
-    <div className="container">
+    <div className="container"> 
       <Search onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />}
       {forecast && <Forecast data={forecast} />}
+  
+      {/*the button that handles the local storage stuff*/}
+      <Button searchValue={searchValue} />
     </div>
   );
 }
