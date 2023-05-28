@@ -25,7 +25,7 @@ const Map = ({
         setMap(null)
     }, [])
 
-    // default is Malmö   
+   
     let lat;
     let lng;
 
