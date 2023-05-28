@@ -11,11 +11,11 @@ function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
   //new
-  const [searchData, setSearchData] = useState("");
+  const [searchValue, setSearchValue] = useState("");
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(" ");
-    
+
     const currentWeatherFetch = fetch(
       `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
     );
@@ -32,7 +32,7 @@ function App() {
         setForecast
         ({ city: searchData.label, ...forcastResponse });
         //Sets search value
-        setSearchData(searchData); 
+        setSearchValue(searchData.label); 
       })
       .catch(console.log);
   };
@@ -40,12 +40,12 @@ function App() {
   return (
     <div className="container"> 
       <Search onSearchChange={handleOnSearchChange} />
-      <Map searchData={searchData}/>
+      <Map />
       {currentWeather && <CurrentWeather data={currentWeather} />}
       {forecast && <Forecast data={forecast} />}
   
       {/*the button that handles the local storage stuff*/}
-      <Button searchValue={searchData?.label} />
+      <Button searchValue={searchValue} />
     </div>
   );
 }
