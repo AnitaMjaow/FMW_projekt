@@ -5,7 +5,7 @@ import CurrentWeather from "./components/current-weather/current-weather";
 import Forecast from "./components/forecast/forecast";
 import { WEATHER_API_URL, WEATHER_API_KEY } from "./api";
 import "./App.css";
-import Button from "./saveToLS.js"
+import SaveToLSButton from "./saveToLS.js"
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
@@ -42,7 +42,7 @@ function App() {
       <Search onSearchChange={handleOnSearchChange} />
       {/*the button that handles the local storage stuff*/}
       <div class="btn" id="save-btn">
-        <Button searchValue={searchData?.label} />
+        <SaveToLSButton searchValue={searchData?.label} />
       </div>
       <div class="top-panel">
         <div class="col">

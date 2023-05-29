@@ -1,20 +1,20 @@
 import React from 'react';
 
-const Button = ({ searchValue }) => {
+const SaveToLSButton = ({ searchValue }) => {
     const handleClick = () => {
       console.log("This the search value:" + searchValue);
 
-      if(searchValue !== ""){
+      if(searchValue !== undefined){
         //this means its basically a day
-      var twentyFourHours = new Date().getTime() + 24 * 60 * 60 * 1000; 
-      var data = { value: searchValue, twentyFourHours };
+        var twentyFourHours = new Date().getTime() + 24 * 60 * 60 * 1000; 
+        var data = { value: searchValue, twentyFourHours };
 
-      //setting it to localstorage here
-      localStorage.setItem("searchData", JSON.stringify(data));
+        //setting it to localstorage here
+        localStorage.setItem("searchData", JSON.stringify(data));
       }
       else{
         //if its empty do nothing
-        console.log(":( empty");
+        alert("You cant save an empty search!");
       }
     };  
   
@@ -23,4 +23,4 @@ const Button = ({ searchValue }) => {
   );
 };
 
-export default Button;
+export default SaveToLSButton;
