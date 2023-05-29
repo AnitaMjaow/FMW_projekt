@@ -15,7 +15,7 @@ function App() {
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(" ");
-    
+
     const currentWeatherFetch = fetch(
       `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
     );
@@ -30,22 +30,29 @@ function App() {
 
         setCurrentWeather({ city: searchData.label, ...weatherResponse });
         setForecast
-        ({ city: searchData.label, ...forcastResponse });
+          ({ city: searchData.label, ...forcastResponse });
         //Sets search value
-        setSearchData(searchData); 
+        setSearchData(searchData);
       })
       .catch(console.log);
   };
 
   return (
-    <div className="container"> 
+    <div className="container">
       <Search onSearchChange={handleOnSearchChange} />
-      <Map searchData={searchData}/>
-      {currentWeather && <CurrentWeather data={currentWeather} />}
-      {forecast && <Forecast data={forecast} />}
-  
       {/*the button that handles the local storage stuff*/}
-      <Button searchValue={searchData?.label} />
+      <div class="btn" id="save-btn">
+        <Button searchValue={searchData?.label} />
+      </div>
+      <div class="top-panel">
+        <div class="col">
+          <Map searchData={searchData} />
+        </div>
+        <div class="col">
+          {currentWeather && <CurrentWeather data={currentWeather} />}
+        </div>
+      </div>
+      {forecast && <Forecast data={forecast} />}
     </div>
   );
 }
