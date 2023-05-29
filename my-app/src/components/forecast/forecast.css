@@ -4,20 +4,8 @@
 }
 
 .icon-small {
-  width: 40px;
+  width: 80px;
 }
-
-/* .daily-item {
-  background-color: #f5f5f5;
-  border-radius: 15px;
-  height: 40px;
-  margin: 5px;
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  font-size: 14px;
-  padding: 5px 20px;
-} */
 
 .daily-item {
   cursor: pointer;
