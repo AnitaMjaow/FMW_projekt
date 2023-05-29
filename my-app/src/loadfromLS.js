@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Button2 = () => {
+const LoadFromLSButton = ()   => {
+  const [buttonText, setButtonText] = useState('Click for a text of your last location');
+
     const handleClick = () => {
-      console.log("he")
+        if(localStorage.getItem("searchData") !== null){
+            var previousLocString = "Your previous saved location: "
+            //fetch it from Local storage
+            var searchData = localStorage.getItem("searchData");
+            //parse it in JSON
+            var JSONobject = JSON.parse(searchData);
+            //set it to the single value
+            searchData = JSONobject.value;
+            
+            setButtonText("");
+            setButtonText(previousLocString + searchData);
+        }
+        else{
+            alert("Nothing is in the loaded data");
+        }
     }
   return (
-    <button onClick={handleClick}>Load your saved location</button>
+    <button onClick={handleClick}>{buttonText}</button>
   );
 };
 
-export default Button2;
+export default LoadFromLSButton;

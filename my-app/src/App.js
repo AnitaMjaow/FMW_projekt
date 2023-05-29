@@ -6,6 +6,7 @@ import Forecast from "./components/forecast/forecast";
 import { WEATHER_API_URL, WEATHER_API_KEY } from "./api";
 import "./App.css";
 import SaveToLSButton from "./saveToLS.js"
+import LoadFromLSButton from "./loadfromLS.js"
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
@@ -43,6 +44,7 @@ function App() {
       {/*the button that handles the local storage stuff*/}
       <div class="btn" id="save-btn">
         <SaveToLSButton searchValue={searchData?.label} />
+        <LoadFromLSButton></LoadFromLSButton>
       </div>
       <div class="top-panel">
         <div class="col">
