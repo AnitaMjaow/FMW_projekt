@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const SaveToLSButton = ({ searchValue }) => {
     const handleClick = () => {
       console.log("This the search value:" + searchValue);
