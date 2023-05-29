@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./current-weather.css";
 
+
 const CurrentWeather = ({ data }) => {
+
+  var [date, setDate] = useState(new Date());
+
+  useEffect(() => {
+    var timer = setInterval(() => setDate(new Date()), 1000)
+    return function cleanup() {
+      clearInterval(timer)
+    }
+
+  });
   return (
+
     <div className="weather">
       <div className="top">
         <div>
           <p className="city">{data.city}</p>
+          <h2> Date : {date.toLocaleDateString()}</h2>
+          <p> Time : {date.toLocaleTimeString()}</p>
+
           <p className="weather-description">{data.weather[0].description}</p>
         </div>
         <img
