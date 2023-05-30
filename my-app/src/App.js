@@ -42,7 +42,7 @@ function App() {
     <div className="container">
       <Search onSearchChange={handleOnSearchChange} />
       {/*the button that handles the local storage stuff*/}
-      <div class="btn" id="save-btn">
+      <div class="btn" id="top-buttons">
         <SaveToLSButton searchValue={searchData?.label} />
         <LoadFromLSButton></LoadFromLSButton>
       </div>

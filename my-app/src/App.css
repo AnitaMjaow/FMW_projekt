@@ -53,7 +53,7 @@ body {
 .top-panel {
   display: flex;
   flex-direction: row;
-  margin: 0 25px;
+  margin: 25px;
 }
 
 .col {
@@ -61,6 +61,11 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  .btn button {
+    margin-bottom: 30px;
+    margin-right: 0px;
+  }
+
   .top-panel {
     flex-direction: column;
   }
@@ -70,11 +75,15 @@ body {
   }
 }
 
-#save-btn {
+#top-buttons {
+  display: flex;
+  justify-content: space-between;
   margin: 25px;
 }
 
+
 .btn button {
+  margin-right: 10px;
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -86,7 +95,7 @@ body {
   font-family: inherit;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 1.25em 2em;
+  padding: 10px;
   background: #fff0f0;
   border: 2px solid #b18597;
   border-radius: 0.75em;
@@ -128,4 +137,12 @@ body {
 .btn button:active::before {
   box-shadow: 0 0 0 2px #b18597, 0 0 grey;
   transform: translate3d(0, 0, -1em);
+}
+
+@media screen and (max-width: 200px) {
+  .btn button {
+    margin-bottom: 30px;
+    margin-right: 0px;
+  }
+
 }
