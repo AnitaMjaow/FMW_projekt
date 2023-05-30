@@ -67,13 +67,14 @@
   flex: 1 1;
   font-weight: 600;
   margin-left: 15px;
+  float: right;
 }
 
 
 .description {
   cursor: inherit;
   flex: 1 1;
-  margin-right: 15px;
+  margin: 0 10px;
   text-align: right;
 }
 

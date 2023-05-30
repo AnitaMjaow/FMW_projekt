@@ -12,14 +12,16 @@ const CurrentWeather = ({ data }) => {
       clearInterval(timer)
     }
 
+
   });
   return (
 
     <div className="weather">
       <div className="top">
         <div>
+          <h2>{date.toLocaleString(window.navigator.language, { weekday: 'long' })}</h2>
+          <p>{date.toLocaleDateString()}</p>
           <p className="city">{data.city}</p>
-          <h2> Date : {date.toLocaleDateString()}</h2>
           <p> Time : {date.toLocaleTimeString()}</p>
 
           <p className="weather-description">{data.weather[0].description}</p>
