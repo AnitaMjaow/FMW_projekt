@@ -4,7 +4,7 @@ import { MAPS_API_KEY } from '../../api'
 
 const containerStyle = {
     width: '400px',
-    height: '400px'
+    height: '400px',
 };
 
 const Map = ({
@@ -41,7 +41,7 @@ const Map = ({
     }
 
     return isLoaded && lat && lng ? (
-        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '12px', paddingBottom: '12px'}}>
+        <div style={{ display: 'flex', justifyContent: 'left', paddingTop: '12px', paddingBottom: '12px' }}>
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={{
