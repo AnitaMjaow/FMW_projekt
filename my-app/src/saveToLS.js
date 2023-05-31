@@ -1,9 +1,9 @@
 import React from 'react';
 
-
 const SaveToLSButton = ({ searchValue }) => {
     const handleClick = () => {
-      console.log("This the search value:" + searchValue);
+      //debug with this, it prints the search value 
+      //console.log("This the search value:" + searchValue);
 
       if(searchValue !== undefined){
         //this means its basically a day

@@ -11,9 +11,8 @@ import LoadFromLSButton from "./loadfromLS.js"
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
-  //new
   const [searchData, setSearchData] = useState("");
-
+  
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(" ");
 
