@@ -11,10 +11,9 @@ const CurrentWeather = ({ data }) => {
     return function cleanup() {
       clearInterval(timer)
     }
-
   });
-  return (
 
+  return (
     <div className="weather">
       <div className="top">
         <div>

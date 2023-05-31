@@ -16,6 +16,11 @@ const Map = ({
     })
 
     const [map, setMap] = React.useState(null)
+    
+    //debug stuff
+    if(map === "21"){
+        console.log();
+    }
 
     const onLoad = React.useCallback(function callback(map) {
         setMap(map)
@@ -25,7 +30,7 @@ const Map = ({
         setMap(null)
     }, [])
 
-   
+    //latitude and longitude, where you are on the map
     let lat;
     let lng;
 
@@ -33,9 +38,7 @@ const Map = ({
         const [searchedLat, searchedLong] = searchData ? searchData?.value.split(" ") : [];
         lat = Number(searchedLat);
         lng = Number(searchedLong);
-
     }
-
 
     return isLoaded && lat && lng ? (
         <div style={{display: 'flex', justifyContent: 'center', paddingTop: '12px', paddingBottom: '12px'}}>
