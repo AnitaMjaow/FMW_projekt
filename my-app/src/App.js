@@ -5,8 +5,8 @@ import CurrentWeather from "./components/current-weather/current-weather";
 import Forecast from "./components/forecast/forecast";
 import { WEATHER_API_URL, WEATHER_API_KEY } from "./api";
 import "./App.css";
-import SaveToLSButton from "./saveToLS.js"
-import LoadFromLSButton from "./loadfromLS.js"
+import SaveToLSButton from "./components/local-storage/saveToLS.js"
+import LoadFromLSButton from "./components/local-storage/loadfromLS.js"
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
