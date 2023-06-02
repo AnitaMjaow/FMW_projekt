@@ -9,6 +9,7 @@ const SaveToLSButton = ({ searchValue }) => {
       // Get old data from local storage
       const oldJsonData = JSON.parse(localStorage.getItem('searchData'));
 
+      //if the oldJsonData is NOT null
       if (oldJsonData !== null) {
         console.log(oldJsonData);
 
@@ -18,7 +19,8 @@ const SaveToLSButton = ({ searchValue }) => {
 
         // Store combined data in local storage
         localStorage.setItem('searchData', JSON.stringify(combinedData));
-      } else {
+      } 
+      else {
         // If there is no existing array, create a new one
         const newDataArray = [newData];
         console.log('no data or invalid data in JSON');

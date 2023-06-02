@@ -1,7 +1,11 @@
+import React, { useState } from 'react';
+
 const LoadFromLSButton = ()   => {
   //const [setButtonText] = useState('Click to see a history of your saved searches');
+  const [listItems, setListItems] = useState([]);
 
     const handleClick = () => {
+      
 
       //if theres stuff in search data
         if(localStorage.getItem("searchData") !== null){ 
@@ -18,13 +22,29 @@ const LoadFromLSButton = ()   => {
             setButtonText(previousLocString + searchData);
           */
 
+            //fetch data from Local storage
+            const dataInLocalStorage = localStorage.getItem("searchData");    
+            
+            const parsedData = JSON.parse(dataInLocalStorage);
+            const values = parsedData.map((item, index) => (
+              <li key={index}>{index}: {item.value}</li>
+            ));
+      
+
+            setListItems(values);
+
+            //console.log(values);
+
         }
         else{
             alert("Nothing is in the loaded data");
         }
     }
   return (
-    <button onClick={handleClick}>Click to see a history of your saved searches</button>
+    <div>
+      <button onClick={handleClick}>Click to see a history of your saved searches</button>
+      <ul>history {listItems}</ul>
+    </div>
   );
 };
 
