@@ -1,10 +1,10 @@
 import { useState } from "react";
+import "./App.css";
+import { WEATHER_API_URL, WEATHER_API_KEY } from "./api";
+import Forecast from "./components/forecast/forecast";
 import Search from "./components/search/search";
 import Map from "./components/map/Map";
 import CurrentWeather from "./components/current-weather/current-weather";
-import Forecast from "./components/forecast/forecast";
-import { WEATHER_API_URL, WEATHER_API_KEY } from "./api";
-import "./App.css";
 import SaveToLSButton from "./components/local-storage/saveToLS.js"
 import LoadFromLSButton from "./components/local-storage/loadfromLS.js"
 
