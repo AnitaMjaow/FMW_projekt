@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-
 const LoadFromLSButton = ()   => {
-  const [buttonText, setButtonText] = useState('Click for a text of your last location');
+  //const [setButtonText] = useState('Click to see a history of your saved searches');
 
     const handleClick = () => {
-        if(localStorage.getItem("searchData") !== null){
+
+      //if theres stuff in search data
+        if(localStorage.getItem("searchData") !== null){ 
+          /*
             var previousLocString = "Your previous saved location: "
             //fetch it from Local storage
             var searchData = localStorage.getItem("searchData");
@@ -15,13 +16,15 @@ const LoadFromLSButton = ()   => {
             
             setButtonText("");
             setButtonText(previousLocString + searchData);
+          */
+
         }
         else{
             alert("Nothing is in the loaded data");
         }
     }
   return (
-    <button onClick={handleClick}>{buttonText}</button>
+    <button onClick={handleClick}>Click to see a history of your saved searches</button>
   );
 };
 
