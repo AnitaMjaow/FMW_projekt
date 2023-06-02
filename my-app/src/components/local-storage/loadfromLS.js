@@ -5,45 +5,46 @@ const LoadFromLSButton = ()   => {
   const [listItems, setListItems] = useState([]);
 
     const handleClick = () => {
-      
-
       //if theres stuff in search data
         if(localStorage.getItem("searchData") !== null){ 
-          /*
-            var previousLocString = "Your previous saved location: "
-            //fetch it from Local storage
-            var searchData = localStorage.getItem("searchData");
-            //parse it in JSON
-            var JSONobject = JSON.parse(searchData);
-            //set it to the single value
-            searchData = JSONobject.value;
-            
-            setButtonText("");
-            setButtonText(previousLocString + searchData);
-          */
-
             //fetch data from Local storage
             const dataInLocalStorage = localStorage.getItem("searchData");    
             
             const parsedData = JSON.parse(dataInLocalStorage);
             const values = parsedData.map((item, index) => (
-              <li key={index}>{index}: {item.value}</li>
+              <li key={index}>{item.value}<button onClick={() => handleDelete(index)}>X</button></li>
             ));
-      
 
+            //set it to the ul
             setListItems(values);
-
-            //console.log(values);
-
         }
         else{
             alert("Nothing is in the loaded data");
         }
+
+    //this deletes the list item
+    const handleDelete = (index) => {
+      const dataInLocalStorage = localStorage.getItem('searchData');
+      const parsedData = JSON.parse(dataInLocalStorage);
+      const updatedData = parsedData.filter((item, i) => i !== index);
+
+      //update the local storage
+      localStorage.setItem('searchData', JSON.stringify(updatedData));
+      const updatedValues = updatedData.map((item, i) => (
+      <li key={i}>
+        {item.value}
+        <button onClick={() => handleDelete(i)}>X</button>
+      </li>
+    ));
+
+    //update the UL with list items
+    setListItems(updatedValues);
+  }
     }
   return (
     <div>
       <button onClick={handleClick}>Click to see a history of your saved searches</button>
-      <ul>history {listItems}</ul>
+      <ul>{listItems}</ul>
     </div>
   );
 };

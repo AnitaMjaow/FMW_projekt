@@ -9,27 +9,33 @@ const SaveToLSButton = ({ searchValue }) => {
       // Get old data from local storage
       const oldJsonData = JSON.parse(localStorage.getItem('searchData'));
 
+      //is the newData a duplicate of the previous saved thing in local storage?
+      const isDuplicate = oldJsonData && oldJsonData.some(item => item.value === searchValue);
+
       //if the oldJsonData is NOT null
       if (oldJsonData !== null) {
-        console.log(oldJsonData);
+        //check if the previous entry is not a duplicate
+        if(!isDuplicate){
+          //combine the data
+          const combinedData = [...oldJsonData, newData];
+          console.log(combinedData);
 
-        // Combine old data with new data
-        const combinedData = [...oldJsonData, newData];
-        console.log(combinedData);
-
-        // Store combined data in local storage
-        localStorage.setItem('searchData', JSON.stringify(combinedData));
+          //Store combined data in localstorage
+          localStorage.setItem('searchData', JSON.stringify(combinedData));
+          }
+          else{
+            alert("This search is already saved!");
+          }
       } 
       else {
-        // If there is no existing array, create a new one
+        //Create new array of the data
         const newDataArray = [newData];
-        console.log('no data or invalid data in JSON');
-
-        // Store new data array in local storage
+      
+        //Put the array in the localstorage
         localStorage.setItem('searchData', JSON.stringify(newDataArray));
       }
     } else {
-      // If it's empty, do nothing
+      //If search is empty dont save it
       alert('You cant save an empty search!');
     }
   };
