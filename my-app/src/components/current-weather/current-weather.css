@@ -54,6 +54,18 @@
   align-items: center;
 }
 
+@media screen and (max-width: 260px) {
+
+  .top,
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
+
 .city {
   font-weight: 600;
   line-height: 1;
@@ -80,10 +92,30 @@
   margin: 10px 0;
 }
 
+@media screen and (max-width: 670px) {
+  .temperature {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .temperature {
+    font-size: 20px;
+  }
+}
+
+
 .details {
   width: 100%;
   padding-left: 20px;
 }
+
+@media screen and (max-width: 260px) {
+  .details {
+    padding-left: 0px;
+  }
+}
+
 
 .parameter-row {
   display: flex;

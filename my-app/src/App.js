@@ -42,7 +42,9 @@ function App() {
       <Search onSearchChange={handleOnSearchChange} />
       {/*the button that handles the local storage stuff*/}
       <div class="btn" id="top-buttons">
+        <div>
         <SaveToLSButton searchValue={searchData?.label} />
+        </div>
         <LoadFromLSButton></LoadFromLSButton>
       </div>
       <div class="top-panel">
