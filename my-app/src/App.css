@@ -61,6 +61,9 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  body {
+    font-size: 0.55em;
+  }
   .btn button {
     margin-bottom: 30px;
     margin-right: 0px;
@@ -137,6 +140,20 @@ body {
 .btn button:active::before {
   box-shadow: 0 0 0 2px #b18597, 0 0 grey;
   transform: translate3d(0, 0, -1em);
+}
+
+ul {
+  padding-inline-start: 0px;
+}
+
+#list-item {
+  background: #fff;
+  list-style: none;
+  padding: 20px;
+}
+
+#delete-list-item {
+  float: right;
 }
 
 @media screen and (max-width: 200px) {
