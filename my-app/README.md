@@ -68,3 +68,20 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+This is a weather app where you  can search for a city/town/village and see the weather for the week (7 days), along with seeing it on a google map. You are able to save searches in your history.
+
+Frameworks used:
+React.js
+NPM
+
+APIs used:
+OpenweatherMapAPI
+GeoDB Cities API
+Google maps API
+
+React was chosen for this project as the "final form" of this software is to be used as an app on a persons smartphone. Future work on the project would include integrating the weather app into the React Native framework. 
+
+The openweather API was chosen due to the group having experience with it along with GeoDB cities. Google maps API was chosen since its one of the most used map services and that most end users would understand it quicker than other maps.
