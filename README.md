@@ -14,7 +14,7 @@ React är ett populärt ramverk och har en aktiv “community”.
  
 Kan användas för att skapa mobila applikationer, om vi hade utvecklat projektet vidare så hade det blivit en app på telefonen.
 
-React.js verkar vara ett större ramverk än vue.js och angular verkade svårare.
+React.js verkar vara ett större ramverk än vue.js och gällande angular verkade ramverket svårare.
 
 
 Used Apis in project: 
