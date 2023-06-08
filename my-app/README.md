@@ -71,17 +71,27 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 -------------------------------------------------------------------------------------------------------------------------------
 
+#PROJECT DESCRIPTION
 This is a weather app where you  can search for a city/town/village and see the weather for the week (7 days), along with seeing it on a google map. You are able to save searches in your history.
 
+#APIs AND FRAMEWORKS USED
 Frameworks used:
 React.js
-NPM
 
 APIs used:
 OpenweatherMapAPI
 GeoDB Cities API
 Google maps API
 
-React was chosen for this project as the "final form" of this software is to be used as an app on a persons smartphone. Future work on the project would include integrating the weather app into the React Native framework. 
+#COMPARISON
+React vs Angular:
+React has a simpler learning curve compared to Angular which made it advantagious for us who have no/little experience using either of the frameworks, to learn angular would be harder due to having to learn typescript (for example). Reacts virtual DOM would also provide a faster rendering of the changes in the weather if the weather app was to be realized.
 
-The openweather API was chosen due to the group having experience with it along with GeoDB cities. Google maps API was chosen since its one of the most used map services and that most end users would understand it quicker than other maps.
+OpenweatherMap API vs Dark Sky API:
+The main benefit of using OpenweatherMap is that it has a free version while Dark sky does not. Even if Dark Sky does provide more in detail coverage it is mainly focused on the USA, while we want to be able to show the weather world wide.
+
+GeoDB Cities API vs GeoNames:
+GeoDB Cities is as its name implies focused on cities while GeoNames are place names. Though it would be a good idea to include both GeoDB is the better option as most people live in cities. GeODB also lists nearby cities if instructed.
+
+Google Maps API vs Bing Maps:
+Google maps is more popular and well known to users than Bing maps. Google Maps is also able to easily be used in combination with other google products such as street view/etc.. It is also more reliable than Bing due to the fact that Google is a bigger and richer company.
